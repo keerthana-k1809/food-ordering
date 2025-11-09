@@ -1,26 +1,27 @@
 
 import RestaurantCard from './RestaurantCard'
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import resList from './utils/reslist';
 
 
 const Body = () => {
-   const [listOfRestaurants,setListOfRestaurants]=useState([]);
-   const [filteredRes,setFilteredRes]=useState([]);
+   const [listOfRestaurants,setListOfRestaurants]=useState(resList);
+   const [filteredRes,setFilteredRes]=useState(resList);
    const [search,setSearch]=useState(""); 
   
-   useEffect(()=>{
-    fetchData();
+  //  useEffect(()=>{
+  //   fetchData();
 
-   },[])
-   const fetchData=async ()=>{
-    const data=await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=12.9352403&lng=77.624532&carousel=true&third_party_vendor=1");
-    const json=await data.json();
-    console.log(json);
-    setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  //  },[])
+  // //  const fetchData=async ()=>{
+    
+
+  //   const data=await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=12.9352403&lng=77.624532&carousel=true&third_party_vendor=1");
+  //   const json=await data.json();
+  //   setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  //   setFilteredRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   
-   }
+  //  }
    
    return (
     <>
