@@ -52,7 +52,9 @@ const appRouter= createBrowserRouter([
         
         
     }
-])
+],{
+  basename:"/food-ordering",
+})
 
 function App(){
   return  <RouterProvider router={appRouter}/>
